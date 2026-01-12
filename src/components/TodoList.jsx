@@ -1,12 +1,10 @@
-import ToDoItem from "./ToDoItem";
+import { memo, useContext } from "react";
 
-const TodoList = (props) => {
-  const {
-    tasks = [],
-    onDeleteTaskButtonClick,
-    onTaskCompleteChange,
-    filteredTasks,
-  } = props;
+import ToDoItem from "./ToDoItem";
+import { TasksContext } from "../context/TasksContext";
+
+const TodoList = () => {
+  const { tasks, filteredTasks } = useContext(TasksContext);
 
   const hasTasks = tasks.length > 0;
   const isEmptyFilteredTasks = filteredTasks?.length === 0;
@@ -28,12 +26,10 @@ const TodoList = (props) => {
           id={task.id}
           title={task.title}
           isDone={task.isDone}
-          onDeleteTaskButtonClick={onDeleteTaskButtonClick}
-          onTaskCompleteChange={onTaskCompleteChange}
         />
       ))}
     </ul>
   );
 };
 
-export default TodoList;
+export default memo(TodoList);
