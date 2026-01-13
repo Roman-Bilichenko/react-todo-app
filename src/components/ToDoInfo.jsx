@@ -7,7 +7,7 @@ const ToDoInfo = () => {
   const total = tasks.length;
   const hasTasks = total > 0;
   const done = useMemo(() => {
-    tasks.filter(({ isDone }) => isDone).length;
+    return tasks.filter(({ isDone }) => isDone).length;
   }, [tasks]);
 
   return (
