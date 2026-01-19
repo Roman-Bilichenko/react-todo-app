@@ -2,14 +2,14 @@
   position: relative;
   width: 100%;
 
-  &:has(.field__input:not(:placeholder-shown)) .field__label {
+  &:has(.input:not(:placeholder-shown)) .label {
     color: var(--color-black);
     scale: 0.7;
     translate: -1.75em -2.6em;
   }
 }
 
-.field__label {
+.label {
   position: absolute;
   top: 50%;
   left: 17px;
@@ -18,7 +18,7 @@
   pointer-events: none;
 }
 
-.field__input {
+.input {
   --fieldInputPaddingX: 16px;
   --fieldSeachInputIconSize: 16px;
 
@@ -51,12 +51,12 @@
     }
   }
 
-  &.is-invalid {
+  &.isInvalid {
     border-color: red;
   }
 }
 
-.field__error {
+.error {
   position: absolute;
   top: 100%;
   left: 0;
