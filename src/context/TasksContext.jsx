@@ -4,7 +4,7 @@ import useIncompleteTaskScroll from "../hooks/useIncompleteTaskScroll";
 
 export const TasksContext = createContext({});
 
-export const TaskProvider = (props) => {
+export const TasksProvider = (props) => {
   const { children } = props;
 
   const {
